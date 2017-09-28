@@ -7,10 +7,14 @@ php:
 - '5.4'
 
 sudo: false
+matrix:
+  fast_finish: true
 branches:
   except:
   - "/^*-v[0-9]/"
 env:
+  matrix:
+  - WP_VERSION=latest WP_MULTISITE=0
   global:
   - MASTER_BRANCH=master UPSTREAM_REPO=Codeinwp/navmenu-addon-for-elementor STORE_URL=https://themeisle.com
    DEPLOY_BUILD=7.0
