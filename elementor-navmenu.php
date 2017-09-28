@@ -3,7 +3,7 @@
  * Plugin Name: NavMenu Addon For Elementor
  * Description: Adds new NavMenus to the Elementor Page Builder plugin. Now with Site Branding options, search box, basic MegaMenu and Fullscreen Menu Overlay
  * Plugin URI: https://wpdevhq.com/
- * Author: WPDevHQ
+ * Author: ThemeIsle
  * Version: 1.1.0
  * Author URI: https://wpdevhq.com/
  *
