@@ -7,7 +7,7 @@
  * Version: 1.1.0
  * Author URI: https://themeisle.com/
  *
- * Text Domain: elementor-menus
+ * Text Domain: navmenu-addon-for-elementor
  * Requires License: no
  * WordPress Available: yes
  */
@@ -34,7 +34,7 @@ define( 'ELEMENTOR_MENUS_MODULES_URL', ELEMENTOR_MENUS_URL . 'modules/' );
  * @return void
  */
 function elementor_menus_load_plugin() {
-	load_plugin_textdomain( 'elementor-menus' );
+	load_plugin_textdomain( 'navmenu-addon-for-elementor' );
 
 	if ( ! did_action( 'elementor/loaded' ) ) {
 		add_action( 'admin_notices', 'elementor_menus_fail_load' );
