@@ -1,6 +1,6 @@
 === NavMenu Addon For Elementor ===
 
-Contributors: WPDevHQ   
+Contributors: themeisle, codeinwp
 Tags: elementor, pagebuilder, page builder, page builder menu, page builder navmenu, menu builder, builder navigation menus, navigation, menus, navmenu, nav menu  
 Requires at least: 4.4  
 Tested up to: 4.8.1  
