@@ -1,0 +1,24 @@
+{
+  "name": "codeinwp/navmenu-addon-for-elementor",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/Codeinwp/themeisle-sdk"
+    }
+  ],
+  "homepage": "https://themeisle.com/plugins/navmenu-addon-for-elementor/",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "ThemeIsle Team",
+      "email": "friends@themeisle.com.com",
+      "homepage": "https://themeisle.com"
+    }
+  ],
+  "type": "wordpress-plugin",
+  "require": {
+    "codeinwp/themeisle-sdk": "master"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
