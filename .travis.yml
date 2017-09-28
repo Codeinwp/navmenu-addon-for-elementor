@@ -9,6 +9,7 @@ php:
 sudo: false
 matrix:
   fast_finish: true
+  include:
   - php: '5.3'
     dist: precise
 branches:
