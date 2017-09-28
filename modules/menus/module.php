@@ -9,9 +9,9 @@ class Module extends Module_Base {
 	public function __construct() {
 		parent::__construct();
 
-		//$this->add_actions();
+		// $this->add_actions();
 	}
-	
+
 	public function get_name() {
 		return 'elementor-menus';
 	}
@@ -20,8 +20,8 @@ class Module extends Module_Base {
 		return [
 			'Default_Navmenu',
 			'Navmenu_Overlay',
-			'Mega_Menu',			
+			'Mega_Menu',
 		];
 	}
-	
+
 }

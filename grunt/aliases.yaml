@@ -1,0 +1,7 @@
+local:
+  - 'phpcbf'
+  - 'mkdir:logs'
+  - 'phplint'
+  - 'phpcs'
+  - 'check:js'
+  - 'check:i18n'

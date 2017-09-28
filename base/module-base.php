@@ -26,7 +26,7 @@ abstract class Module_Base {
 	 */
 	public function __clone() {
 		// Cloning instances of the class is forbidden
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'elementor-menus' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'navmenu-addon-for-elementor' ), '1.0.0' );
 	}
 
 	/**
@@ -37,7 +37,7 @@ abstract class Module_Base {
 	 */
 	public function __wakeup() {
 		// Unserializing instances of the class is forbidden
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'elementor-menus' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'navmenu-addon-for-elementor' ), '1.0.0' );
 	}
 
 	public static function class_name() {

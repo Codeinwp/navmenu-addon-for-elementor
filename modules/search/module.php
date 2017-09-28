@@ -9,17 +9,17 @@ class Module extends Module_Base {
 	public function __construct() {
 		parent::__construct();
 
-		//$this->add_actions();
+		// $this->add_actions();
 	}
-	
+
 	public function get_name() {
 		return 'elementor-search';
 	}
 
 	public function get_widgets() {
 		return [
-			'Elementor_Search',			
+			'Elementor_Search',
 		];
 	}
-	
+
 }

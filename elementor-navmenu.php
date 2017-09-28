@@ -2,12 +2,12 @@
 /**
  * Plugin Name: NavMenu Addon For Elementor
  * Description: Adds new NavMenus to the Elementor Page Builder plugin. Now with Site Branding options, search box, basic MegaMenu and Fullscreen Menu Overlay
- * Plugin URI: https://wpdevhq.com/
- * Author: WPDevHQ
+ * Plugin URI: https://themeisle.com/
+ * Author: ThemeIsle
  * Version: 1.1.0
- * Author URI: https://wpdevhq.com/
+ * Author URI: https://themeisle.com/
  *
- * Text Domain: elementor-menus
+ * Text Domain: navmenu-addon-for-elementor
  * Requires License: no
  * WordPress Available: yes
  */
@@ -34,7 +34,7 @@ define( 'ELEMENTOR_MENUS_MODULES_URL', ELEMENTOR_MENUS_URL . 'modules/' );
  * @return void
  */
 function elementor_menus_load_plugin() {
-	load_plugin_textdomain( 'elementor-menus' );
+	load_plugin_textdomain( 'navmenu-addon-for-elementor' );
 
 	if ( ! did_action( 'elementor/loaded' ) ) {
 		add_action( 'admin_notices', 'elementor_menus_fail_load' );
@@ -76,8 +76,8 @@ function elementor_menus_fail_load() {
 
 		$activation_url = wp_nonce_url( 'plugins.php?action=activate&amp;plugin=' . $plugin . '&amp;plugin_status=all&amp;paged=1&amp;s', 'activate-plugin_' . $plugin );
 
-		$message = '<p>' . __( 'Elementor NavMenu is not working because you need to activate the Elementor plugin.', 'elementor-menus' ) . '</p>';
-		$message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $activation_url, __( 'Activate Elementor Now', 'elementor-menus' ) ) . '</p>';
+		$message = '<p>' . __( 'Elementor NavMenu is not working because you need to activate the Elementor plugin.', 'navmenu-addon-for-elementor' ) . '</p>';
+		$message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $activation_url, __( 'Activate Elementor Now', 'navmenu-addon-for-elementor' ) ) . '</p>';
 	} else {
 		if ( ! current_user_can( 'install_plugins' ) ) {
 			return;
@@ -85,8 +85,8 @@ function elementor_menus_fail_load() {
 
 		$install_url = wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=elementor' ), 'install-plugin_elementor' );
 
-		$message = '<p>' . __( 'Elementor NavMenu is not working because you need to install the Elemenor plugin', 'elementor-menus' ) . '</p>';
-		$message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $install_url, __( 'Install Elementor Now', 'elementor-menus' ) ) . '</p>';
+		$message = '<p>' . __( 'Elementor NavMenu is not working because you need to install the Elemenor plugin', 'navmenu-addon-for-elementor' ) . '</p>';
+		$message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $install_url, __( 'Install Elementor Now', 'navmenu-addon-for-elementor' ) ) . '</p>';
 	}
 
 	echo '<div class="error"><p>' . $message . '</p></div>';
@@ -100,8 +100,8 @@ function elementor_menus_fail_load_out_of_date() {
 	$file_path = 'elementor/elementor.php';
 
 	$upgrade_link = wp_nonce_url( self_admin_url( 'update.php?action=upgrade-plugin&plugin=' ) . $file_path, 'upgrade-plugin_' . $file_path );
-	$message      = '<p>' . __( 'Elementor NavMenu is not working because you are using an old version of Elementor.', 'elementor-menus' ) . '</p>';
-	$message      .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $upgrade_link, __( 'Update Elementor Now', 'elementor-menus' ) ) . '</p>';
+	$message      = '<p>' . __( 'Elementor NavMenu is not working because you are using an old version of Elementor.', 'navmenu-addon-for-elementor' ) . '</p>';
+	$message      .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $upgrade_link, __( 'Update Elementor Now', 'navmenu-addon-for-elementor' ) ) . '</p>';
 
 	echo '<div class="error">' . $message . '</div>';
 }
@@ -192,7 +192,7 @@ if ( is_readable( $vendor_file ) ) {
 }
 
 add_filter( 'themeisle_sdk_products', 'navmenu_elementor_register_sdk', 10, 1 );
-function navmenu_elementor_register_sdk($products){
+function navmenu_elementor_register_sdk( $products ) {
 	$products[] = ELEMENTOR_MENUS__FILE__;
 	return $products;
 }

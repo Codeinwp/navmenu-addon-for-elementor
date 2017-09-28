@@ -4,7 +4,8 @@ namespace ElementorMenus;
 use Elementor\Utils;
 use Elementor\Controls_Manager;
 
-if ( ! defined( 'ABSPATH' ) ) {	exit; } // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; } // Exit if accessed directly
 
 /**
  * Main class plugin
@@ -44,7 +45,7 @@ class Plugin {
 	 */
 	public function __clone() {
 		// Cloning instances of the class is forbidden
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'elementor-menus' ), '1.0.5' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'navmenu-addon-for-elementor' ), '1.0.5' );
 	}
 
 	/**
@@ -55,7 +56,7 @@ class Plugin {
 	 */
 	public function __wakeup() {
 		// Unserializing instances of the class is forbidden
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'elementor-menus' ), '1.0.5' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'navmenu-addon-for-elementor' ), '1.0.5' );
 	}
 
 	/**
@@ -70,11 +71,11 @@ class Plugin {
 	}
 
 	private function _includes() {
-		require ELEMENTOR_MENUS_PATH . 'includes/modules-manager.php';		
+		require ELEMENTOR_MENUS_PATH . 'includes/modules-manager.php';
 
-		//if ( is_admin() ) {
-			//require ELEMENTOR_MENUS_PATH . 'includes/admin.php';
-		//}
+		// if ( is_admin() ) {
+			// require ELEMENTOR_MENUS_PATH . 'includes/admin.php';
+		// }
 	}
 
 	public function autoload( $class ) {
@@ -140,7 +141,7 @@ class Plugin {
 
 	public function enqueue_scripts() {
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-		
+
 		wp_enqueue_script(
 			'elementor-menus-modernizer',
 			ELEMENTOR_MENUS_URL . 'assets/js/modernizr.custom.js',
@@ -170,16 +171,16 @@ class Plugin {
 			]
 		);
 	}
-	
+
 	public function enqueue_panel_scripts() {
-		//$suffix = Utils::is_script_debug() ? '' : '.min';
+		// $suffix = Utils::is_script_debug() ? '' : '.min';
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-		
+
 		wp_enqueue_script(
 			'elementor-menus-modernizer',
 			ELEMENTOR_MENUS_URL . 'assets/js/modernizr.custom.js',
 			[
-				//'jquery',
+				// 'jquery',
 			],
 			ELEMENTOR_MENUS_VERSION,
 			false
@@ -195,14 +196,14 @@ class Plugin {
 			ELEMENTOR_MENUS_VERSION,
 			true
 		);
-		
+
 		wp_localize_script(
 			'elementor-menus',
 			'ElementorMenusConfig',
 			apply_filters( 'elementor_menus/editor/localize_settings', [] ),
 			[
-				'expand'   => __( 'expand child menu', 'elementor-menus' ),
-				'collapse' => __( 'collapse child menu', 'elementor-menus' ),
+				'expand'   => __( 'expand child menu', 'navmenu-addon-for-elementor' ),
+				'collapse' => __( 'collapse child menu', 'navmenu-addon-for-elementor' ),
 			]
 		);
 	}
@@ -214,31 +215,37 @@ class Plugin {
 			'elementor-menus-editor',
 			ELEMENTOR_MENUS_URL . 'assets/css/editor' . $suffix . '.css',
 			[
-				'elementor-editor'
+				'elementor-editor',
 			],
 			ELEMENTOR_MENUS_VERSION
 		);
 	}
-	
+
 	public function enqueue_default_scripts() {
-		wp_localize_script( 'elementor-menus-frontend', 'elementorScreenReaderText', array(
-			'expand'   => __( 'expand child menu', 'elementor-menus' ),
-			'collapse' => __( 'collapse child menu', 'elementor-menus' ),
-		) );
+		wp_localize_script(
+			'elementor-menus-frontend', 'elementorScreenReaderText', array(
+				'expand'   => __( 'expand child menu', 'navmenu-addon-for-elementor' ),
+				'collapse' => __( 'collapse child menu', 'navmenu-addon-for-elementor' ),
+			)
+		);
 	}
-	
+
 	public function enqueue_default_secondary_scripts() {
-		wp_localize_script( 'elementor-menus-frontend', 'elementorSecondaryScreenReaderText', array(
-			'expand'   => __( 'expand child menu', 'elementor-menus' ),
-			'collapse' => __( 'collapse child menu', 'elementor-menus' ),
-		) );
+		wp_localize_script(
+			'elementor-menus-frontend', 'elementorSecondaryScreenReaderText', array(
+				'expand'   => __( 'expand child menu', 'navmenu-addon-for-elementor' ),
+				'collapse' => __( 'collapse child menu', 'navmenu-addon-for-elementor' ),
+			)
+		);
 	}
-	
+
 	public function enqueue_panel_default_scripts() {
-		wp_localize_script( 'elementor-menus', 'elementorScreenReaderText', array(
-			'expand'   => __( 'expand child menu', 'elementor-menus' ),
-			'collapse' => __( 'collapse child menu', 'elementor-menus' ),
-		) );
+		wp_localize_script(
+			'elementor-menus', 'elementorScreenReaderText', array(
+				'expand'   => __( 'expand child menu', 'navmenu-addon-for-elementor' ),
+				'collapse' => __( 'collapse child menu', 'navmenu-addon-for-elementor' ),
+			)
+		);
 	}
 
 	public function elementor_init() {
@@ -248,7 +255,7 @@ class Plugin {
 		\Elementor\Plugin::instance()->elements_manager->add_category(
 			'branding-elements',
 			[
-				'title' => __( 'Header Elements', 'elementor-menus' ),
+				'title' => __( 'Header Elements', 'navmenu-addon-for-elementor' ),
 				'icon' => 'font',
 			],
 			1
@@ -279,8 +286,8 @@ class Plugin {
 		$this->add_actions();
 
 		if ( is_admin() ) {
-			//new Admin();
-			//new License\Admin();
+			// new Admin();
+			// new License\Admin();
 		}
 	}
 }
