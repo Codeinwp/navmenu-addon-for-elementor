@@ -51,8 +51,8 @@ class Mega_Menu extends Widget_Base {
 		$this->add_control(
 			'el_mega_menu',
 			[
-				'label' => __( 'Select Menu', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::SELECT, 'options' => navmenu_navbar_menu_choices(),
+				'label'   => __( 'Select Menu', 'navmenu-addon-for-elementor' ),
+				'type'    => Controls_Manager::SELECT, 'options' => navmenu_navbar_menu_choices(),
 				'default' => '',
 			]
 		);
@@ -60,33 +60,33 @@ class Mega_Menu extends Widget_Base {
 		$this->add_responsive_control(
 			'align',
 			[
-				'label' => __( 'Alignment', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'left'    => [
+				'label'        => __( 'Alignment', 'navmenu-addon-for-elementor' ),
+				'type'         => Controls_Manager::CHOOSE,
+				'options'      => [
+					'left'   => [
 						'title' => __( 'Left', 'navmenu-addon-for-elementor' ),
-						'icon' => 'fa fa-align-left',
+						'icon'  => 'fa fa-align-left',
 					],
 					'center' => [
 						'title' => __( 'Center', 'navmenu-addon-for-elementor' ),
-						'icon' => 'fa fa-align-center',
+						'icon'  => 'fa fa-align-center',
 					],
-					'right' => [
+					'right'  => [
 						'title' => __( 'Right', 'navmenu-addon-for-elementor' ),
-						'icon' => 'fa fa-align-right',
+						'icon'  => 'fa fa-align-right',
 					],
 				],
 				'prefix_class' => 'elementor%s-align-',
-				'default' => '',
+				'default'      => '',
 			]
 		);
 
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name' => 'navbar_typography',
-				'label' => __( 'Typography', 'navmenu-addon-for-elementor' ),
-				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+				'name'     => 'navbar_typography',
+				'label'    => __( 'Typography', 'navmenu-addon-for-elementor' ),
+				'scheme'   => Scheme_Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .cbp-hsmenu',
 			]
 		);
@@ -103,9 +103,9 @@ class Mega_Menu extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name' => 'megamenu_typography',
-				'label' => __( 'Typography', 'navmenu-addon-for-elementor' ),
-				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+				'name'     => 'megamenu_typography',
+				'label'    => __( 'Typography', 'navmenu-addon-for-elementor' ),
+				'scheme'   => Scheme_Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .cbp-hssubmenu',
 			]
 		);
@@ -116,17 +116,17 @@ class Mega_Menu extends Widget_Base {
 			'navbar_style',
 			[
 				'label' => __( 'NavBar', 'navmenu-addon-for-elementor' ),
-				'tab' => Controls_Manager::TAB_STYLE,
+				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_control(
 			'navbar_color',
 			[
-				'label' => __( 'Color', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
+				'label'     => __( 'Color', 'navmenu-addon-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'scheme'    => [
+					'type'  => Scheme_Color::get_type(),
 					'value' => Scheme_Color::COLOR_1,
 				],
 				'default'   => '#ffffff',
@@ -139,10 +139,10 @@ class Mega_Menu extends Widget_Base {
 		$this->add_control(
 			'navbar_bg_color',
 			[
-				'label' => __( 'Background', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
+				'label'     => __( 'Background', 'navmenu-addon-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'scheme'    => [
+					'type'  => Scheme_Color::get_type(),
 					'value' => Scheme_Color::COLOR_1,
 				],
 				'default'   => '#00275e',
@@ -155,10 +155,10 @@ class Mega_Menu extends Widget_Base {
 		$this->add_control(
 			'navbar_padding',
 			[
-				'label' => __( 'Padding', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::DIMENSIONS,
+				'label'      => __( 'Padding', 'navmenu-addon-for-elementor' ),
+				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'selectors' => [
+				'selectors'  => [
 					'{{WRAPPER}} .cbp-hsmenu > li > a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
@@ -176,10 +176,10 @@ class Mega_Menu extends Widget_Base {
 		$this->add_control(
 			'megamenu_color',
 			[
-				'label' => __( 'Color', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
+				'label'     => __( 'Color', 'navmenu-addon-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'scheme'    => [
+					'type'  => Scheme_Color::get_type(),
 					'value' => Scheme_Color::COLOR_1,
 				],
 				'default'   => '#a2a2a2',
@@ -192,10 +192,10 @@ class Mega_Menu extends Widget_Base {
 		$this->add_control(
 			'megamenu_hover',
 			[
-				'label' => __( 'hover', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
+				'label'     => __( 'hover', 'navmenu-addon-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'scheme'    => [
+					'type'  => Scheme_Color::get_type(),
 					'value' => Scheme_Color::COLOR_1,
 				],
 				'default'   => '#a2a2a2',
@@ -208,10 +208,10 @@ class Mega_Menu extends Widget_Base {
 		$this->add_control(
 			'megamenu_bg_color',
 			[
-				'label' => __( 'Background', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
+				'label'     => __( 'Background', 'navmenu-addon-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'scheme'    => [
+					'type'  => Scheme_Color::get_type(),
 					'value' => Scheme_Color::COLOR_1,
 				],
 				'default'   => '#f7f7f7',
@@ -236,17 +236,17 @@ class Mega_Menu extends Widget_Base {
 		}
 
 		$args = array(
-			'fallback_cb'       => false,
-			'container'         => false,
-			'before'            => '',
-			'after'             => '',
-			'menu_id'           => 'mega-menu',
-			'menu_class'        => 'cbp-hsmenu',
-			'theme_location'    => 'nav_mega_menu', // creating a fake location for better functional control
-			'menu'              => $mega_menu,
-			'echo'              => true,
-			'depth'             => 0,
-			'walker'            => '',
+			'fallback_cb'    => false,
+			'container'      => false,
+			'before'         => '',
+			'after'          => '',
+			'menu_id'        => 'mega-menu',
+			'menu_class'     => 'cbp-hsmenu',
+			'theme_location' => 'nav_mega_menu', // creating a fake location for better functional control
+			'menu'           => $mega_menu,
+			'echo'           => true,
+			'depth'          => 0,
+			'walker'         => '',
 		);
 		?>
 		

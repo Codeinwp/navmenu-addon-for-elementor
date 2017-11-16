@@ -3,7 +3,7 @@
 Contributors: themeisle, codeinwp
 Tags: elementor, pagebuilder, page builder, page builder menu, page builder navmenu, menu builder, builder navigation menus, navigation, menus, navmenu, nav menu  
 Requires at least: 4.4  
-Tested up to: 4.8
+Tested up to: 4.9
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html   
 

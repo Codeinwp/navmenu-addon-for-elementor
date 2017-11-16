@@ -50,33 +50,33 @@ class Elementor_Search extends Widget_Base {
 		$this->add_responsive_control(
 			'align',
 			[
-				'label' => __( 'Alignment', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'left'    => [
+				'label'        => __( 'Alignment', 'navmenu-addon-for-elementor' ),
+				'type'         => Controls_Manager::CHOOSE,
+				'options'      => [
+					'left'   => [
 						'title' => __( 'Left', 'navmenu-addon-for-elementor' ),
-						'icon' => 'fa fa-align-left',
+						'icon'  => 'fa fa-align-left',
 					],
 					'center' => [
 						'title' => __( 'Center', 'navmenu-addon-for-elementor' ),
-						'icon' => 'fa fa-align-center',
+						'icon'  => 'fa fa-align-center',
 					],
-					'right' => [
+					'right'  => [
 						'title' => __( 'Right', 'navmenu-addon-for-elementor' ),
-						'icon' => 'fa fa-align-right',
+						'icon'  => 'fa fa-align-right',
 					],
 				],
 				'prefix_class' => 'elementor%s-align-',
-				'default' => '',
+				'default'      => '',
 			]
 		);
 
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name' => 'search_typography',
-				'label' => __( 'Typography', 'navmenu-addon-for-elementor' ),
-				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+				'name'     => 'search_typography',
+				'label'    => __( 'Typography', 'navmenu-addon-for-elementor' ),
+				'scheme'   => Scheme_Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .elementor-search',
 			]
 		);
@@ -87,17 +87,17 @@ class Elementor_Search extends Widget_Base {
 			'section_search_style',
 			[
 				'label' => __( 'Search', 'navmenu-addon-for-elementor' ),
-				'tab' => Controls_Manager::TAB_STYLE,
+				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_control(
 			'search_text_color',
 			[
-				'label' => __( 'Box Color', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
+				'label'     => __( 'Box Color', 'navmenu-addon-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'scheme'    => [
+					'type'  => Scheme_Color::get_type(),
 					'value' => Scheme_Color::COLOR_1,
 				],
 				'default'   => '#333333',
@@ -110,10 +110,10 @@ class Elementor_Search extends Widget_Base {
 		$this->add_control(
 			'search_bg_color',
 			[
-				'label' => __( 'Box Background', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
+				'label'     => __( 'Box Background', 'navmenu-addon-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'scheme'    => [
+					'type'  => Scheme_Color::get_type(),
 					'value' => Scheme_Color::COLOR_1,
 				],
 				'default'   => '#ffffff',
@@ -126,10 +126,10 @@ class Elementor_Search extends Widget_Base {
 		$this->add_control(
 			'box_padding',
 			[
-				'label' => __( 'Search Padding', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::DIMENSIONS,
+				'label'      => __( 'Search Padding', 'navmenu-addon-for-elementor' ),
+				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'selectors' => [
+				'selectors'  => [
 					'{{WRAPPER}} .elementor-search' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
@@ -141,16 +141,16 @@ class Elementor_Search extends Widget_Base {
 			'section_search_borders',
 			[
 				'label' => __( 'Border', 'navmenu-addon-for-elementor' ),
-				'tab' => Controls_Manager::TAB_STYLE,
+				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
-				'name' => 'border',
-				'label' => __( 'Border', 'navmenu-addon-for-elementor' ),
-				'default' => '1px',
+				'name'     => 'border',
+				'label'    => __( 'Border', 'navmenu-addon-for-elementor' ),
+				'default'  => '1px',
 				'selector' => '{{WRAPPER}} .elementor-search',
 			]
 		);
@@ -158,10 +158,10 @@ class Elementor_Search extends Widget_Base {
 		$this->add_control(
 			'border_radius',
 			[
-				'label' => __( 'Border Radius', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::DIMENSIONS,
+				'label'      => __( 'Border Radius', 'navmenu-addon-for-elementor' ),
+				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
-				'selectors' => [
+				'selectors'  => [
 					'{{WRAPPER}} .elementor-search' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
