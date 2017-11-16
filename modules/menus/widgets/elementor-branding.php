@@ -50,37 +50,37 @@ class Elementor_Branding extends Widget_Base {
 		$this->add_control(
 			'el_site_branding',
 			[
-				'label' => __( 'Branding Type', 'navmenu-addon-for-elementor' ),
+				'label'       => __( 'Branding Type', 'navmenu-addon-for-elementor' ),
 				'description' => __( 'Your theme must declare the "add_theme_support( \'custom-logo\')" for the logo to work', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::SELECT, 'options' => [
+				'type'        => Controls_Manager::SELECT, 'options' => [
 					'title' => __( 'Title', 'navmenu-addon-for-elementor' ),
-					'logo' => __( 'Logo', 'navmenu-addon-for-elementor' ),
+					'logo'  => __( 'Logo', 'navmenu-addon-for-elementor' ),
 				],
-				'default' => 'title',
+				'default'     => 'title',
 			]
 		);
 
 		$this->add_responsive_control(
 			'align',
 			[
-				'label' => __( 'Alignment', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'left'    => [
+				'label'        => __( 'Alignment', 'navmenu-addon-for-elementor' ),
+				'type'         => Controls_Manager::CHOOSE,
+				'options'      => [
+					'left'   => [
 						'title' => __( 'Left', 'navmenu-addon-for-elementor' ),
-						'icon' => 'fa fa-align-left',
+						'icon'  => 'fa fa-align-left',
 					],
 					'center' => [
 						'title' => __( 'Center', 'navmenu-addon-for-elementor' ),
-						'icon' => 'fa fa-align-center',
+						'icon'  => 'fa fa-align-center',
 					],
-					'right' => [
+					'right'  => [
 						'title' => __( 'Right', 'navmenu-addon-for-elementor' ),
-						'icon' => 'fa fa-align-right',
+						'icon'  => 'fa fa-align-right',
 					],
 				],
 				'prefix_class' => 'elementor%s-align-',
-				'default' => '',
+				'default'      => '',
 			]
 		);
 
@@ -90,20 +90,20 @@ class Elementor_Branding extends Widget_Base {
 			'section_title_style',
 			[
 				'label' => __( 'Brand', 'navmenu-addon-for-elementor' ),
-				'tab' => Controls_Manager::TAB_STYLE,
+				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_control(
 			'branding_title_color',
 			[
-				'label' => __( 'Title Color', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::COLOR,
+				'label'     => __( 'Title Color', 'navmenu-addon-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
 				'condition' => [
 					'el_site_branding' => 'title',
 				],
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
+				'scheme'    => [
+					'type'  => Scheme_Color::get_type(),
 					'value' => Scheme_Color::COLOR_1,
 				],
 				'default'   => '#333333',
@@ -116,13 +116,13 @@ class Elementor_Branding extends Widget_Base {
 		$this->add_control(
 			'branding_title_hover',
 			[
-				'label' => __( 'Hover', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::COLOR,
+				'label'     => __( 'Hover', 'navmenu-addon-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
 				'condition' => [
 					'el_site_branding' => 'title',
 				],
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
+				'scheme'    => [
+					'type'  => Scheme_Color::get_type(),
 					'value' => Scheme_Color::COLOR_1,
 				],
 				'selectors' => [
@@ -134,13 +134,13 @@ class Elementor_Branding extends Widget_Base {
 		$this->add_control(
 			'title_padding',
 			[
-				'label' => __( 'Title Padding - Default 1em', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'condition' => [
+				'label'      => __( 'Title Padding - Default 1em', 'navmenu-addon-for-elementor' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'condition'  => [
 					'el_site_branding' => 'title',
 				],
 				'size_units' => [ 'px', 'em', '%' ],
-				'selectors' => [
+				'selectors'  => [
 					'{{WRAPPER}} .elementor-branding .site-title a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
@@ -149,26 +149,26 @@ class Elementor_Branding extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name' => 'title_typography',
-				'label' => __( 'Typography', 'navmenu-addon-for-elementor' ),
+				'name'      => 'title_typography',
+				'label'     => __( 'Typography', 'navmenu-addon-for-elementor' ),
 				'condition' => [
 					'el_site_branding' => 'title',
 				],
-				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-				'selector' => '{{WRAPPER}} .elementor-branding .site-title',
+				'scheme'    => Scheme_Typography::TYPOGRAPHY_1,
+				'selector'  => '{{WRAPPER}} .elementor-branding .site-title',
 			]
 		);
 
 		$this->add_control(
 			'logo_padding',
 			[
-				'label' => __( 'Title Padding - Default 1em', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'condition' => [
+				'label'      => __( 'Title Padding - Default 1em', 'navmenu-addon-for-elementor' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'condition'  => [
 					'el_site_branding' => 'logo',
 				],
 				'size_units' => [ 'px', 'em', '%' ],
-				'selectors' => [
+				'selectors'  => [
 					'{{WRAPPER}} .elementor-branding .custom-logo' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
@@ -179,8 +179,8 @@ class Elementor_Branding extends Widget_Base {
 		$this->start_controls_section(
 			'section_desc_style',
 			[
-				'label' => __( 'Description Options', 'navmenu-addon-for-elementor' ),
-				'tab' => Controls_Manager::TAB_STYLE,
+				'label'     => __( 'Description Options', 'navmenu-addon-for-elementor' ),
+				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'el_site_branding' => 'title',
 				],
@@ -190,13 +190,13 @@ class Elementor_Branding extends Widget_Base {
 		$this->add_control(
 			'branding_description_color',
 			[
-				'label' => __( 'Description Color', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::COLOR,
+				'label'     => __( 'Description Color', 'navmenu-addon-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
 				'condition' => [
 					'el_site_branding' => 'title',
 				],
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
+				'scheme'    => [
+					'type'  => Scheme_Color::get_type(),
 					'value' => Scheme_Color::COLOR_1,
 				],
 				'selectors' => [
@@ -208,13 +208,13 @@ class Elementor_Branding extends Widget_Base {
 		$this->add_control(
 			'desc_padding',
 			[
-				'label' => __( 'Description Padding - Default 1em', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'condition' => [
+				'label'      => __( 'Description Padding - Default 1em', 'navmenu-addon-for-elementor' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'condition'  => [
 					'el_site_branding' => 'title',
 				],
 				'size_units' => [ 'px', 'em', '%' ],
-				'selectors' => [
+				'selectors'  => [
 					'{{WRAPPER}} .elementor-branding .site-description' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
@@ -223,13 +223,13 @@ class Elementor_Branding extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name' => 'desc_typography',
-				'label' => __( 'Typography', 'navmenu-addon-for-elementor' ),
+				'name'      => 'desc_typography',
+				'label'     => __( 'Typography', 'navmenu-addon-for-elementor' ),
 				'condition' => [
 					'el_site_branding' => 'title',
 				],
-				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
-				'selector' => '{{WRAPPER}} .elementor-branding .site-description',
+				'scheme'    => Scheme_Typography::TYPOGRAPHY_1,
+				'selector'  => '{{WRAPPER}} .elementor-branding .site-description',
 			]
 		);
 
@@ -239,16 +239,16 @@ class Elementor_Branding extends Widget_Base {
 			'section_branding_borders',
 			[
 				'label' => __( 'Branding Border', 'navmenu-addon-for-elementor' ),
-				'tab' => Controls_Manager::TAB_STYLE,
+				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
-				'name' => 'border',
-				'label' => __( 'Border', 'navmenu-addon-for-elementor' ),
-				'default' => '1px',
+				'name'     => 'border',
+				'label'    => __( 'Border', 'navmenu-addon-for-elementor' ),
+				'default'  => '1px',
 				'selector' => '{{WRAPPER}} .elementor-branding',
 			]
 		);
@@ -256,10 +256,10 @@ class Elementor_Branding extends Widget_Base {
 		$this->add_control(
 			'border_radius',
 			[
-				'label' => __( 'Border Radius', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::DIMENSIONS,
+				'label'      => __( 'Border Radius', 'navmenu-addon-for-elementor' ),
+				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
-				'selectors' => [
+				'selectors'  => [
 					'{{WRAPPER}} .elementor-branding' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]

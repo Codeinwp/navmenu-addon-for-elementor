@@ -51,8 +51,8 @@ class Navmenu_Overlay extends Widget_Base {
 		$this->add_control(
 			'el_overlay_menu',
 			[
-				'label' => __( 'Select Menu', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::SELECT, 'options' => navmenu_navbar_menu_choices(),
+				'label'   => __( 'Select Menu', 'navmenu-addon-for-elementor' ),
+				'type'    => Controls_Manager::SELECT, 'options' => navmenu_navbar_menu_choices(),
 				'default' => '',
 			]
 		);
@@ -60,23 +60,23 @@ class Navmenu_Overlay extends Widget_Base {
 		$this->add_responsive_control(
 			'item_align',
 			[
-				'label' => __( 'Item Alignment', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'left'    => [
+				'label'     => __( 'Item Alignment', 'navmenu-addon-for-elementor' ),
+				'type'      => Controls_Manager::CHOOSE,
+				'options'   => [
+					'left'   => [
 						'title' => __( 'Left', 'navmenu-addon-for-elementor' ),
-						'icon' => 'fa fa-align-left',
+						'icon'  => 'fa fa-align-left',
 					],
 					'center' => [
 						'title' => __( 'Center', 'navmenu-addon-for-elementor' ),
-						'icon' => 'fa fa-align-center',
+						'icon'  => 'fa fa-align-center',
 					],
-					'right' => [
+					'right'  => [
 						'title' => __( 'Right', 'navmenu-addon-for-elementor' ),
-						'icon' => 'fa fa-align-right',
+						'icon'  => 'fa fa-align-right',
 					],
 				],
-				'default' => 'center',
+				'default'   => 'center',
 				'selectors' => [
 					'{{WRAPPER}} .overlay-navigation ul li, .overlay-navigation ul ul li' => 'text-align: {{VALUE}};',
 				],
@@ -86,9 +86,9 @@ class Navmenu_Overlay extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name' => 'search_typography',
-				'label' => __( 'Typography', 'navmenu-addon-for-elementor' ),
-				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+				'name'     => 'search_typography',
+				'label'    => __( 'Typography', 'navmenu-addon-for-elementor' ),
+				'scheme'   => Scheme_Typography::TYPOGRAPHY_1,
 				'selector' => '{{WRAPPER}} .overlay-navigation a',
 			]
 		);
@@ -99,17 +99,17 @@ class Navmenu_Overlay extends Widget_Base {
 			'section_style',
 			[
 				'label' => __( 'Overlay Style', 'navmenu-addon-for-elementor' ),
-				'tab' => Controls_Manager::TAB_STYLE,
+				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_control(
 			'item_color',
 			[
-				'label' => __( 'Color', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
+				'label'     => __( 'Color', 'navmenu-addon-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'scheme'    => [
+					'type'  => Scheme_Color::get_type(),
 					'value' => Scheme_Color::COLOR_1,
 				],
 				'default'   => '#ffffff',
@@ -122,10 +122,10 @@ class Navmenu_Overlay extends Widget_Base {
 		$this->add_control(
 			'item_hover',
 			[
-				'label' => __( 'Hover', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
+				'label'     => __( 'Hover', 'navmenu-addon-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'scheme'    => [
+					'type'  => Scheme_Color::get_type(),
 					'value' => Scheme_Color::COLOR_1,
 				],
 				'default'   => '#ffffff',
@@ -138,10 +138,10 @@ class Navmenu_Overlay extends Widget_Base {
 		$this->add_control(
 			'overlay_bg_color',
 			[
-				'label' => __( 'Overlay Background', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
+				'label'     => __( 'Overlay Background', 'navmenu-addon-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'scheme'    => [
+					'type'  => Scheme_Color::get_type(),
 					'value' => Scheme_Color::COLOR_1,
 				],
 				'default'   => '',
@@ -154,10 +154,10 @@ class Navmenu_Overlay extends Widget_Base {
 		$this->add_control(
 			'section_padding',
 			[
-				'label' => __( 'Padding', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::DIMENSIONS,
+				'label'      => __( 'Padding', 'navmenu-addon-for-elementor' ),
+				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'selectors' => [
+				'selectors'  => [
 					'{{WRAPPER}} .overlay-navigation ul li' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
@@ -169,17 +169,17 @@ class Navmenu_Overlay extends Widget_Base {
 			'toggle_style',
 			[
 				'label' => __( 'Toggle Style', 'navmenu-addon-for-elementor' ),
-				'tab' => Controls_Manager::TAB_STYLE,
+				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_control(
 			'toggle_color',
 			[
-				'label' => __( 'Color', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
+				'label'     => __( 'Color', 'navmenu-addon-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'scheme'    => [
+					'type'  => Scheme_Color::get_type(),
 					'value' => Scheme_Color::COLOR_1,
 				],
 				'default'   => '#ffffff',
@@ -192,10 +192,10 @@ class Navmenu_Overlay extends Widget_Base {
 		$this->add_control(
 			'toggle_bg_color',
 			[
-				'label' => __( 'Background', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::COLOR,
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
+				'label'     => __( 'Background', 'navmenu-addon-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'scheme'    => [
+					'type'  => Scheme_Color::get_type(),
 					'value' => Scheme_Color::COLOR_1,
 				],
 				'default'   => '#000000',
@@ -208,10 +208,10 @@ class Navmenu_Overlay extends Widget_Base {
 		$this->add_control(
 			'border_radius',
 			[
-				'label' => __( 'Border Radius', 'navmenu-addon-for-elementor' ),
-				'type' => Controls_Manager::DIMENSIONS,
+				'label'      => __( 'Border Radius', 'navmenu-addon-for-elementor' ),
+				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
-				'selectors' => [
+				'selectors'  => [
 					'{{WRAPPER}} #touch-menu' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
@@ -232,15 +232,15 @@ class Navmenu_Overlay extends Widget_Base {
 		}
 
 		$overlay_menu_args = array(
-			'fallback_cb'       => false,
-			'container'         => false,
-			'menu_id'           => '',
-			'menu_class'        => '',
-			'theme_location'    => 'nav_overlay_menu', // creating a fake location for better functional control
-			'menu'              => $overlay_menu,
-			'echo'              => true,
-			'depth'             => 1,
-			'walker'            => '',
+			'fallback_cb'    => false,
+			'container'      => false,
+			'menu_id'        => '',
+			'menu_class'     => '',
+			'theme_location' => 'nav_overlay_menu', // creating a fake location for better functional control
+			'menu'           => $overlay_menu,
+			'echo'           => true,
+			'depth'          => 1,
+			'walker'         => '',
 		);
 	?>
 	<!--<div class="navmenu-overlay">-->

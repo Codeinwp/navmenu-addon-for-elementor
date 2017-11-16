@@ -167,7 +167,7 @@ class Plugin {
 			'ElementorMenusFrontendConfig',
 			[
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
-				'nonce' => wp_create_nonce( 'elementor-menus-frontend' ),
+				'nonce'   => wp_create_nonce( 'elementor-menus-frontend' ),
 			]
 		);
 	}
@@ -256,7 +256,7 @@ class Plugin {
 			'branding-elements',
 			[
 				'title' => __( 'Header Elements', 'navmenu-addon-for-elementor' ),
-				'icon' => 'font',
+				'icon'  => 'font',
 			],
 			1
 		);

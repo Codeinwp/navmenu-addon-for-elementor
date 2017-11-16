@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 return [
-	'title' => __( 'Branding', 'navmenu-addon-for-elementor' ),
-	'required' => true,
+	'title'              => __( 'Branding', 'navmenu-addon-for-elementor' ),
+	'required'           => true,
 	'default_activation' => true,
 ];

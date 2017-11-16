@@ -76,7 +76,7 @@ function elementor_menus_fail_load() {
 
 		$activation_url = wp_nonce_url( 'plugins.php?action=activate&amp;plugin=' . $plugin . '&amp;plugin_status=all&amp;paged=1&amp;s', 'activate-plugin_' . $plugin );
 
-		$message = '<p>' . __( 'Elementor NavMenu is not working because you need to activate the Elementor plugin.', 'navmenu-addon-for-elementor' ) . '</p>';
+		$message  = '<p>' . __( 'Elementor NavMenu is not working because you need to activate the Elementor plugin.', 'navmenu-addon-for-elementor' ) . '</p>';
 		$message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $activation_url, __( 'Activate Elementor Now', 'navmenu-addon-for-elementor' ) ) . '</p>';
 	} else {
 		if ( ! current_user_can( 'install_plugins' ) ) {
@@ -85,7 +85,7 @@ function elementor_menus_fail_load() {
 
 		$install_url = wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=elementor' ), 'install-plugin_elementor' );
 
-		$message = '<p>' . __( 'Elementor NavMenu is not working because you need to install the Elemenor plugin', 'navmenu-addon-for-elementor' ) . '</p>';
+		$message  = '<p>' . __( 'Elementor NavMenu is not working because you need to install the Elemenor plugin', 'navmenu-addon-for-elementor' ) . '</p>';
 		$message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $install_url, __( 'Install Elementor Now', 'navmenu-addon-for-elementor' ) ) . '</p>';
 	}
 
@@ -101,7 +101,7 @@ function elementor_menus_fail_load_out_of_date() {
 
 	$upgrade_link = wp_nonce_url( self_admin_url( 'update.php?action=upgrade-plugin&plugin=' ) . $file_path, 'upgrade-plugin_' . $file_path );
 	$message      = '<p>' . __( 'Elementor NavMenu is not working because you are using an old version of Elementor.', 'navmenu-addon-for-elementor' ) . '</p>';
-	$message      .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $upgrade_link, __( 'Update Elementor Now', 'navmenu-addon-for-elementor' ) ) . '</p>';
+	$message     .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $upgrade_link, __( 'Update Elementor Now', 'navmenu-addon-for-elementor' ) ) . '</p>';
 
 	echo '<div class="error">' . $message . '</div>';
 }
@@ -185,6 +185,40 @@ function nav_menu_body_classes( $classes ) {
 }
 
 add_filter( 'body_class', 'nav_menu_body_classes' );
+
+/* Load TGM */
+require_once( ELEMENTOR_MENUS_PATH . 'includes/class-tgm-plugin-activation.php' );
+
+/**
+ * Configure TGMPA.
+ */
+function elementor_nav_menus_register_required_plugins() {
+	$plugins = array(
+		array(
+			'name'     => 'Elementor Addons & Widgets',
+			'slug'     => 'elementor-addon-widgets',
+			'required' => false,
+		),
+	);
+
+	$config = array(
+		'id'           => 'navmenu-addon-for-elementor',
+		'default_path' => '',
+		'menu'         => 'tgmpa-install-plugins',
+		'parent_slug'  => 'plugins.php',
+		'capability'   => 'manage_options',
+		'has_notices'  => true,
+		'dismissable'  => true,
+		'dismiss_msg'  => '',
+		'is_automatic' => false,
+		'message'      => '',
+	);
+
+	tgmpa( $plugins, $config );
+}
+
+add_action( 'tgmpa_register', 'elementor_nav_menus_register_required_plugins' );
+
 
 $vendor_file = ELEMENTOR_MENUS_PATH . '/vendor/autoload.php';
 if ( is_readable( $vendor_file ) ) {
