@@ -53,6 +53,12 @@ Done! :)
 * For the time being, any changes made to both of the above can be viewed on the frontend of the site. A fix is being sought and will be implemented as soon as a viable solution is found!
 
 == Changelog ==
+= 1.1.1 - 2017-11-16  = 
+
+* Add recommendation for Elementor Addons & Widgets. 
+* Tested up to 4.9.
+
+
 = 1.1.0 - 2017-09-28  = 
 
 * Added Themeisle SDK.

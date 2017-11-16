@@ -1,4 +1,9 @@
 
+ ### v1.1.1 - 2017-11-16 
+ **Changes:** 
+ * Add recommendation for Elementor Addons & Widgets. 
+* Tested up to 4.9.
+ 
  ### v1.1.0 - 2017-09-28 
  **Changes:** 
  * Added Themeisle SDK.
