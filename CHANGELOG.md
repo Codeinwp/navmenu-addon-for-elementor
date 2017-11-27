@@ -1,4 +1,8 @@
 
+ ### v1.1.2 - 2017-11-27 
+ **Changes:** 
+ * Fix TGM strings for recommended plugins.
+ 
  ### v1.1.1 - 2017-11-16 
  **Changes:** 
  * Add recommendation for Elementor Addons & Widgets. 
