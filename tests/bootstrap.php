@@ -9,11 +9,6 @@ if ( ! $_tests_dir ) {
 	$_tests_dir = '/tmp/wordpress-tests-lib';
 }
 
-/************* contactashish13 test environment *************
-$_tests_dir = 'E:\work\apps\wordpress-dev\tests\phpunit';
-$_core_dir = 'E:\work\apps\wordpress-dev\src\\';
-************* contactashish13 test environment *************/
-
 /**
  * The path to the main file of the plugin to test.
  */

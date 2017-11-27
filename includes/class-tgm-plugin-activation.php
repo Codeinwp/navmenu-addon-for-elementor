@@ -346,8 +346,8 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				),
 				'notice_can_install_recommended'  => _n_noop(
 					/* translators: 1: plugin name(s). */
-					'This theme recommends the following plugin: %1$s.',
-					'This theme recommends the following plugins: %1$s.',
+					'NavMenu Addon For Elementor recommends the following plugin: %1$s.',
+					'NavMenu Addon For Elementor recommends the following plugins: %1$s.',
 					'navmenu-addon-for-elementor'
 				),
 				'notice_ask_to_update'            => _n_noop(
