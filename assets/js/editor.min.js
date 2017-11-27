@@ -47,7 +47,7 @@
 		}
 	);
 
-})(jQuery);
+})( jQuery );
 
 
 ( function( $ ) {
@@ -496,7 +496,7 @@
 
 		var menu = new cbpHorizontalSlideOutMenu( document.getElementById( 'cbp-hsmenu-wrapper' ) );
 
-	})(jQuery, this.el);
+	})( jQuery, this.el );
 
 } )( jQuery );
 

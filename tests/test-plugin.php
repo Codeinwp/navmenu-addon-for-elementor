@@ -13,8 +13,8 @@
  * Sample test class.
  */
 class Test_Plugin extends WP_UnitTestCase {
-    public function test_generic(){
-    	$this->assertTrue(true);
-    }
+	public function test_generic() {
+		$this->assertTrue( true );
+	}
 
 }
