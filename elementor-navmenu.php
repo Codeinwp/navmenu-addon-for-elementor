@@ -279,7 +279,8 @@ function navmenu_elementor_nag_ignore_neve() {
 
 $current_theme = wp_get_theme();
 $theme_name    = $current_theme->get( 'TextDomain' );
-if ( $theme_name !== 'neve' ) {
+$template    = $current_theme->get( 'Template' );
+if ( $theme_name !== 'neve' && $template !== 'neve' ) {
 	add_action( 'admin_notices', 'navmenu_elementor_neve_notice' );
 	add_action( 'admin_init', 'navmenu_elementor_nag_ignore_neve' );
 }
