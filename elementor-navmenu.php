@@ -250,12 +250,12 @@ function navmenu_elementor_neve_notice() {
 	$message        =
 		sprintf(
 			/* translators: Install Neve link */
-			esc_html__( 'Check out %1$s. Fully AMP optimized and responsive, Neve will load in mere seconds and adapt perfectly on any viewing device. Neve works perfectly with Gutenberg and the most popular page builders. You will love it!', 'navmenu-addon-for-elementor' ),
+			esc_html__( 'NavMenu Addon For Elementor recommends %1$s. Fully AMP optimized and responsive, Neve will load in mere seconds and adapt perfectly on any viewing device. Neve works perfectly with Gutenberg and the most popular page builders. You will love it!', 'navmenu-addon-for-elementor' ),
 			sprintf(
 				/* translators: Install Neve link */
 				'<a target="_blank" href="%1$s"><strong>%2$s</strong></a>',
 				esc_url( admin_url( 'theme-install.php?theme=neve' ) ),
-				esc_html__( 'our newest theme', 'navmenu-addon-for-elementor' )
+				esc_html__( 'Neve', 'navmenu-addon-for-elementor' )
 			)
 		);
 	printf(
