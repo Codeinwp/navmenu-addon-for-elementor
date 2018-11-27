@@ -223,7 +223,9 @@ class Plugin {
 
 	public function enqueue_default_scripts() {
 		wp_localize_script(
-			'elementor-menus-frontend', 'elementorScreenReaderText', array(
+			'elementor-menus-frontend',
+			'elementorScreenReaderText',
+			array(
 				'expand'   => __( 'expand child menu', 'navmenu-addon-for-elementor' ),
 				'collapse' => __( 'collapse child menu', 'navmenu-addon-for-elementor' ),
 			)
@@ -232,7 +234,9 @@ class Plugin {
 
 	public function enqueue_default_secondary_scripts() {
 		wp_localize_script(
-			'elementor-menus-frontend', 'elementorSecondaryScreenReaderText', array(
+			'elementor-menus-frontend',
+			'elementorSecondaryScreenReaderText',
+			array(
 				'expand'   => __( 'expand child menu', 'navmenu-addon-for-elementor' ),
 				'collapse' => __( 'collapse child menu', 'navmenu-addon-for-elementor' ),
 			)
@@ -241,7 +245,9 @@ class Plugin {
 
 	public function enqueue_panel_default_scripts() {
 		wp_localize_script(
-			'elementor-menus', 'elementorScreenReaderText', array(
+			'elementor-menus',
+			'elementorScreenReaderText',
+			array(
 				'expand'   => __( 'expand child menu', 'navmenu-addon-for-elementor' ),
 				'collapse' => __( 'collapse child menu', 'navmenu-addon-for-elementor' ),
 			)

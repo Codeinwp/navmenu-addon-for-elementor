@@ -3,8 +3,7 @@
  * Plugin Name: NavMenu Addon For Elementor
  * Description: Adds new NavMenus to the Elementor Page Builder plugin. Now with Site Branding options, search box, basic MegaMenu and Fullscreen Menu Overlay
  * Plugin URI: https://themeisle.com/
- * Author: ThemeIsle
- * Version: 1.1.2
+ * Author: ThemeIsle Version: 1.1.3
  * Author URI: https://themeisle.com/
  *
  * Text Domain: navmenu-addon-for-elementor
@@ -16,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-define( 'ELEMENTOR_MENUS_VERSION', '1.1.2' );
+define( 'ELEMENTOR_MENUS_VERSION', '1.1.3' );
 
 define( 'ELEMENTOR_MENUS__FILE__', __FILE__ );
 define( 'ELEMENTOR_MENUS_PLUGIN_BASE', plugin_basename( ELEMENTOR_MENUS__FILE__ ) );
@@ -228,5 +227,61 @@ if ( is_readable( $vendor_file ) ) {
 add_filter( 'themeisle_sdk_products', 'navmenu_elementor_register_sdk', 10, 1 );
 function navmenu_elementor_register_sdk( $products ) {
 	$products[] = ELEMENTOR_MENUS__FILE__;
+
 	return $products;
 }
+
+
+/**
+ * Add a dismissible notice in the dashboard about Neve
+ */
+function navmenu_elementor_neve_notice() {
+	global $current_user;
+	$user_id        = $current_user->ID;
+	$ignored_notice = get_user_meta( $user_id, 'navmenu_elementor_ignore_neve_notice' );
+	if ( ! empty( $ignored_notice ) ) {
+		return;
+	}
+	$dismiss_button =
+		sprintf(
+			'<a href="%s" class="notice-dismiss" style="text-decoration:none;"></a>',
+			'?navmenu_elementor_nag_ignore_neve=0'
+		);
+	$message        =
+		sprintf(
+			/* translators: Install Neve link */
+			esc_html__( 'NavMenu Addon For Elementor recommends %1$s. Fully AMP optimized and responsive, Neve will load in mere seconds and adapt perfectly on any viewing device. Neve works perfectly with Gutenberg and the most popular page builders. You will love it!', 'navmenu-addon-for-elementor' ),
+			sprintf(
+				/* translators: Install Neve link */
+				'<a target="_blank" href="%1$s"><strong>%2$s</strong></a>',
+				esc_url( admin_url( 'theme-install.php?theme=neve' ) ),
+				esc_html__( 'Neve', 'navmenu-addon-for-elementor' )
+			)
+		);
+	printf(
+		'<div class="notice updated" style="position:relative;">%1$s<p>%2$s</p></div>',
+		$dismiss_button,
+		$message
+	);
+}
+
+/**
+ * Update the navmenu_elementor_nag_ignore_neve option to true, to dismiss the notice from the dashboard
+ */
+function navmenu_elementor_nag_ignore_neve() {
+	global $current_user;
+	$user_id = $current_user->ID;
+	/* If user clicks to ignore the notice, add that to their user meta */
+	if ( isset( $_GET['navmenu_elementor_nag_ignore_neve'] ) && '0' == $_GET['navmenu_elementor_nag_ignore_neve'] ) {
+		add_user_meta( $user_id, 'navmenu_elementor_ignore_neve_notice', 'true', true );
+	}
+}
+
+$current_theme = wp_get_theme();
+$theme_name    = $current_theme->get( 'TextDomain' );
+$template      = $current_theme->get( 'Template' );
+if ( $theme_name !== 'neve' && $template !== 'neve' ) {
+	add_action( 'admin_notices', 'navmenu_elementor_neve_notice' );
+	add_action( 'admin_init', 'navmenu_elementor_nag_ignore_neve' );
+}
+

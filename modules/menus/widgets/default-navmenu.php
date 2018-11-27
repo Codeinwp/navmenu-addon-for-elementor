@@ -652,7 +652,7 @@ class Default_Navmenu extends Widget_Base {
 								</nav>
 			</div>
 		</div>
-	<?php
+		<?php
 	}
 
 	protected function _content_template() {}

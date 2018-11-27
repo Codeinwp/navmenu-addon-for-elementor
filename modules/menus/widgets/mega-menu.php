@@ -264,7 +264,7 @@ class Mega_Menu extends Widget_Base {
 				?>
 			</div>
 		</nav>
-	<?php
+		<?php
 	}
 
 	protected function _content_template() {}

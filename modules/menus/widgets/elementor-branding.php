@@ -286,7 +286,7 @@ class Elementor_Branding extends Widget_Base {
 	}
 
 	protected function render_title() {
-	?>
+		?>
 		<span class="site-title">
 		<?php
 			$title = get_bloginfo( 'name' );
@@ -299,9 +299,9 @@ class Elementor_Branding extends Widget_Base {
 		<?php
 			$description = get_bloginfo( 'description', 'display' );
 		if ( $description || is_customize_preview() ) :
-		?>
+			?>
 				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-		<?php
+			<?php
 		endif;
 	}
 
