@@ -53,6 +53,11 @@ Done! :)
 * For the time being, any changes made to both of the above can be viewed on the frontend of the site. A fix is being sought and will be implemented as soon as a viable solution is found!
 
 ## Changelog ##
+### 1.1.4 - 2018-11-27  ###
+
+* Fixed version
+
+
 ### 1.1.3 - 2018-11-27  ###
 
 * Add notice for recommended theme

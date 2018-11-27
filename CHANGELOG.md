@@ -1,4 +1,8 @@
 
+ ### v1.1.4 - 2018-11-27 
+ **Changes:** 
+ * Fixed version
+ 
  ### v1.1.3 - 2018-11-27 
  **Changes:** 
  * Add notice for recommended theme
