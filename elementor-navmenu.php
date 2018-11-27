@@ -264,7 +264,7 @@ function navmenu_elementor_neve_notice() {
 		$message
 	);
 }
-add_action( 'admin_notices', 'navmenu_elementor_neve_notice' );
+
 /**
  * Update the navmenu_elementor_nag_ignore_neve option to true, to dismiss the notice from the dashboard
  */
@@ -276,4 +276,11 @@ function navmenu_elementor_nag_ignore_neve() {
 		add_user_meta( $user_id, 'navmenu_elementor_ignore_neve_notice', 'true', true );
 	}
 }
-add_action( 'admin_init', 'navmenu_elementor_nag_ignore_neve' );
+
+$current_theme = wp_get_theme();
+$theme_name    = $current_theme->get( 'TextDomain' );
+if ( $theme_name !== 'neve' ) {
+	add_action( 'admin_notices', 'navmenu_elementor_neve_notice' );
+	add_action( 'admin_init', 'navmenu_elementor_nag_ignore_neve' );
+}
+
