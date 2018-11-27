@@ -3,8 +3,7 @@
  * Plugin Name: NavMenu Addon For Elementor
  * Description: Adds new NavMenus to the Elementor Page Builder plugin. Now with Site Branding options, search box, basic MegaMenu and Fullscreen Menu Overlay
  * Plugin URI: https://themeisle.com/
- * Author: ThemeIsle
- * Version: 1.1.2
+ * Author: ThemeIsle Version: 1.1.3
  * Author URI: https://themeisle.com/
  *
  * Text Domain: navmenu-addon-for-elementor
@@ -16,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-define( 'ELEMENTOR_MENUS_VERSION', '1.1.2' );
+define( 'ELEMENTOR_MENUS_VERSION', '1.1.3' );
 
 define( 'ELEMENTOR_MENUS__FILE__', __FILE__ );
 define( 'ELEMENTOR_MENUS_PLUGIN_BASE', plugin_basename( ELEMENTOR_MENUS__FILE__ ) );
@@ -228,6 +227,7 @@ if ( is_readable( $vendor_file ) ) {
 add_filter( 'themeisle_sdk_products', 'navmenu_elementor_register_sdk', 10, 1 );
 function navmenu_elementor_register_sdk( $products ) {
 	$products[] = ELEMENTOR_MENUS__FILE__;
+
 	return $products;
 }
 
@@ -279,7 +279,7 @@ function navmenu_elementor_nag_ignore_neve() {
 
 $current_theme = wp_get_theme();
 $theme_name    = $current_theme->get( 'TextDomain' );
-$template    = $current_theme->get( 'Template' );
+$template      = $current_theme->get( 'Template' );
 if ( $theme_name !== 'neve' && $template !== 'neve' ) {
 	add_action( 'admin_notices', 'navmenu_elementor_neve_notice' );
 	add_action( 'admin_init', 'navmenu_elementor_nag_ignore_neve' );
