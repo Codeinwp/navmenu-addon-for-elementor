@@ -242,7 +242,7 @@ class Navmenu_Overlay extends Widget_Base {
 			'depth'          => 1,
 			'walker'         => '',
 		);
-	?>
+		?>
 	<!--<div class="navmenu-overlay">-->
 		<span id="touch-menu" class="mobile-menu"><span></span></span>
 		<nav itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" class="overlay-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Elementor Menu', 'navmenu-addon-for-elementor' ); ?>">
@@ -258,7 +258,7 @@ class Navmenu_Overlay extends Widget_Base {
 			?>
 		</nav>
 	<!--</div>-->
-	<?php
+		<?php
 	}
 
 	protected function _content_template() {}

@@ -237,7 +237,7 @@ function navmenu_elementor_register_sdk( $products ) {
  */
 function navmenu_elementor_neve_notice() {
 	global $current_user;
-	$user_id = $current_user->ID;
+	$user_id        = $current_user->ID;
 	$ignored_notice = get_user_meta( $user_id, 'navmenu_elementor_ignore_neve_notice' );
 	if ( ! empty( $ignored_notice ) ) {
 		return;
@@ -247,12 +247,12 @@ function navmenu_elementor_neve_notice() {
 			'<a href="%s" class="notice-dismiss" style="text-decoration:none;"></a>',
 			'?navmenu_elementor_nag_ignore_neve=0'
 		);
-	$message =
+	$message        =
 		sprintf(
-		/* translators: Install Neve link */
+			/* translators: Install Neve link */
 			esc_html__( 'Check out %1$s. Fully AMP optimized and responsive, Neve will load in mere seconds and adapt perfectly on any viewing device. Neve works perfectly with Gutenberg and the most popular page builders. You will love it!', 'navmenu-addon-for-elementor' ),
 			sprintf(
-			/* translators: Install Neve link */
+				/* translators: Install Neve link */
 				'<a target="_blank" href="%1$s"><strong>%2$s</strong></a>',
 				esc_url( admin_url( 'theme-install.php?theme=neve' ) ),
 				esc_html__( 'our newest theme', 'navmenu-addon-for-elementor' )
