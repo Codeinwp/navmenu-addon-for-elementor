@@ -1,4 +1,8 @@
 
+ ### v1.1.3 - 2018-11-27 
+ **Changes:** 
+ * Add notice for recommended theme
+ 
  ### v1.1.2 - 2017-11-27 
  **Changes:** 
  * Fix TGM strings for recommended plugins.
