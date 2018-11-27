@@ -230,3 +230,50 @@ function navmenu_elementor_register_sdk( $products ) {
 	$products[] = ELEMENTOR_MENUS__FILE__;
 	return $products;
 }
+
+
+/**
+ * Add a dismissible notice in the dashboard about Neve
+ */
+function navmenu_elementor_neve_notice() {
+	global $current_user;
+	$user_id = $current_user->ID;
+	$ignored_notice = get_user_meta( $user_id, 'navmenu_elementor_ignore_neve_notice' );
+	if ( ! empty( $ignored_notice ) ) {
+		return;
+	}
+	$dismiss_button =
+		sprintf(
+			'<a href="%s" class="notice-dismiss" style="text-decoration:none;"></a>',
+			'?navmenu_elementor_nag_ignore_neve=0'
+		);
+	$message =
+		sprintf(
+		/* translators: Install Neve link */
+			esc_html__( 'Check out %1$s. Fully AMP optimized and responsive, Neve will load in mere seconds and adapt perfectly on any viewing device. Neve works perfectly with Gutenberg and the most popular page builders. You will love it!', 'navmenu-addon-for-elementor' ),
+			sprintf(
+			/* translators: Install Neve link */
+				'<a target="_blank" href="%1$s"><strong>%2$s</strong></a>',
+				esc_url( admin_url( 'theme-install.php?theme=neve' ) ),
+				esc_html__( 'our newest theme', 'navmenu-addon-for-elementor' )
+			)
+		);
+	printf(
+		'<div class="notice updated" style="position:relative;">%1$s<p>%2$s</p></div>',
+		$dismiss_button,
+		$message
+	);
+}
+add_action( 'admin_notices', 'navmenu_elementor_neve_notice' );
+/**
+ * Update the navmenu_elementor_nag_ignore_neve option to true, to dismiss the notice from the dashboard
+ */
+function navmenu_elementor_nag_ignore_neve() {
+	global $current_user;
+	$user_id = $current_user->ID;
+	/* If user clicks to ignore the notice, add that to their user meta */
+	if ( isset( $_GET['navmenu_elementor_nag_ignore_neve'] ) && '0' == $_GET['navmenu_elementor_nag_ignore_neve'] ) {
+		add_user_meta( $user_id, 'navmenu_elementor_ignore_neve_notice', 'true', true );
+	}
+}
+add_action( 'admin_init', 'navmenu_elementor_nag_ignore_neve' );
