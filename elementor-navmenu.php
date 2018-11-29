@@ -4,7 +4,7 @@
  * Description: Adds new NavMenus to the Elementor Page Builder plugin. Now with Site Branding options, search box, basic MegaMenu and Fullscreen Menu Overlay
  * Plugin URI: https://themeisle.com/
  * Author: ThemeIsle
- * Version: 1.1.4
+ * Version: 1.1.5
  * Author URI: https://themeisle.com/
  *
  * Text Domain: navmenu-addon-for-elementor
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-define( 'ELEMENTOR_MENUS_VERSION', '1.1.4' );
+define( 'ELEMENTOR_MENUS_VERSION', '1.1.5' );
 
 define( 'ELEMENTOR_MENUS__FILE__', __FILE__ );
 define( 'ELEMENTOR_MENUS_PLUGIN_BASE', plugin_basename( ELEMENTOR_MENUS__FILE__ ) );
