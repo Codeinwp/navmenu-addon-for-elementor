@@ -1,4 +1,8 @@
 
+ ### v1.1.5 - 2018-11-29 
+ **Changes:** 
+ * Fix possible issue with multiple notices
+ 
  ### v1.1.4 - 2018-11-27 
  **Changes:** 
  * Fixed version
