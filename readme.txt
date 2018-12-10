@@ -53,6 +53,11 @@ Done! :)
 * For the time being, any changes made to both of the above can be viewed on the frontend of the site. A fix is being sought and will be implemented as soon as a viable solution is found!
 
 == Changelog ==
+= 1.1.6 - 2018-12-10  = 
+
+* Tested with WP 5.0
+
+
 = 1.1.5 - 2018-11-29  = 
 
 * Fix possible issue with multiple notices

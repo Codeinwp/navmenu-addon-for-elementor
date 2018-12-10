@@ -1,4 +1,8 @@
 
+ ### v1.1.6 - 2018-12-10 
+ **Changes:** 
+ * Tested with WP 5.0
+ 
  ### v1.1.5 - 2018-11-29 
  **Changes:** 
  * Fix possible issue with multiple notices
