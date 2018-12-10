@@ -3,7 +3,7 @@
 Contributors: themeisle, codeinwp
 Tags: elementor, pagebuilder, page builder, page builder menu, page builder navmenu, menu builder, builder navigation menus, navigation, menus, navmenu, nav menu  
 Requires at least: 4.4  
-Tested up to: 4.9
+Tested up to: 5.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html   
 
@@ -53,6 +53,32 @@ Done! :)
 * For the time being, any changes made to both of the above can be viewed on the frontend of the site. A fix is being sought and will be implemented as soon as a viable solution is found!
 
 == Changelog ==
+= 1.1.5 - 2018-11-29  = 
+
+* Fix possible issue with multiple notices
+
+
+= 1.1.4 - 2018-11-27  = 
+
+* Fixed version
+
+
+= 1.1.3 - 2018-11-27  = 
+
+* Add notice for recommended theme
+
+
+= 1.1.2 - 2017-11-27  = 
+
+* Fix TGM strings for recommended plugins.
+
+
+= 1.1.1 - 2017-11-16  = 
+
+* Add recommendation for Elementor Addons & Widgets. 
+* Tested up to 4.9.
+
+
 = 1.1.0 - 2017-09-28  = 
 
 * Added Themeisle SDK.
