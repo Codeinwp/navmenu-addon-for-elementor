@@ -3,7 +3,7 @@
 **Contributors:** [themeisle](https://profiles.wordpress.org/themeisle), [codeinwp](https://profiles.wordpress.org/codeinwp)  
 **Tags:** elementor, pagebuilder, page builder, page builder menu, page builder navmenu, menu builder, builder navigation menus, navigation, menus, navmenu, nav menu    
 **Requires at least:** 4.4    
-**Tested up to:** 4.9  
+**Tested up to:** 5.0  
 **License:** GPLv3  
 **License URI:** https://www.gnu.org/licenses/gpl-3.0.html     
 
